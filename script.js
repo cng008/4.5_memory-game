@@ -5,16 +5,22 @@ let cardsFlipped = 0;
 let noClicking = false;
 
 const COLORS = [
-  "cyan",
-  "lightsteelblue",
-  "lightskyblue",
-  "blue",
-  "lightseagreen",
-  "cyan",
-  "lightsteelblue",
-  "lightskyblue",
-  "blue",
-  "lightseagreen",
+  "#000000",
+  "#E69F00",
+  "#56B4E9",
+  "#009E73",
+  "#F0E442",
+  "#0072B2",
+  "#D55E00",
+  "#CC79A7",
+  "#000000",
+  "#E69F00",
+  "#56B4E9",
+  "#009E73",
+  "#F0E442",
+  "#0072B2",
+  "#D55E00",
+  "#CC79A7",
 ];
 
 // here is a helper function to shuffle an array
@@ -78,7 +84,7 @@ function handleCardClick(e) {
     // e.target.classList.toggle("flip");
     currentCard.classList.add("flip");
     card1 = card1 || currentCard;
-    card2 = currentCard === card1 ? null : currentCard;
+    card2 = currentCard === card1 ? null : currentCard; //making sure cards are not the same
   }
 
   //do cards match?
@@ -105,11 +111,37 @@ function handleCardClick(e) {
         card1 = null;
         card2 = null;
         noClicking = false;
-      }, 1000);
+      }, 500);
     }
   }
 
-  if (cardsFlipped === COLORS.length) alert("you won!");
+  if (cardsFlipped === COLORS.length) {
+    alert("you won!");
+    restartOption();
+  }
 }
 // when the DOM loads
-createDivsForColors(shuffledColors);
+// createDivsForColors(shuffledColors);
+
+//START GAME ON BUTTON CLICK
+const startBtn = document.getElementById("startGame");
+startBtn.addEventListener("click", startGame);
+
+function startGame() {
+  createDivsForColors(shuffledColors);
+  startBtn.style.display = "none";
+  startBtn.removeEventListener("click", startGame);
+  restartBtn.style.display = "inline";
+}
+
+// RESTART GAME BUTTON
+const restartBtn = document.getElementById("restartGame");
+restartBtn.addEventListener("click", restartGame);
+
+function restartGame() {
+  gameContainer.innerHTML = "";
+  createDivsForColors(shuffledColors);
+  restartBtn.removeEventListener("click", restartGame);
+}
+
+//SHOW ALL CARDS BUTTON

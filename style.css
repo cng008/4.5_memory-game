@@ -10,11 +10,6 @@ body {
   width: 90vw;
 }
 
-div {
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-}
-
 #game div {
   border: 1px solid none;
   width: 15vw;
@@ -23,8 +18,8 @@ div {
   display: inline-block;
   border-radius: 5px;
   background: lightgray;
-  transform: scale(0.9);
-  transition: transform 0.2s; /* Animation */
+  transform: scale(0.9); /* Animation */
+  transition: transform 0.2s;
   perspective: 1000px;
   backface-visibility: hidden;
 }
@@ -33,17 +28,23 @@ div {
   transform: scale(1);
 }
 
-.flip {
-  transform: rotateY(180deg);
-  background: lightgray;
+button {
+  font-family: "Bakbak One", cursive;
+  font-size: 0.6em;
+  color: rgb(59, 47, 167);
+  padding: 0.3em;
+  border: 2px solid rgb(59, 47, 167);
+  border-radius: 16px;
 }
 
-/* .front-face .back-face {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  position: absolute;
-  border-radius: 5px;
-  background: lightgray;
-  backface-visibility: hidden;
-} */
+button:hover {
+  background: rgb(59, 47, 167);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#restartGame {
+  display: none;
+  transform: scale(0.6);
+}
