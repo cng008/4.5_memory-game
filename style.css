@@ -1,6 +1,6 @@
 * {
   font-size: 40px;
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   text-align: center;
   background: whitesmoke;
 }
@@ -12,7 +12,7 @@ body {
 
 #game div {
   border: 1px solid none;
-  width: 15vw;
+  width: 20vw;
   height: 3em;
   margin: 10px;
   display: inline-block;
@@ -29,7 +29,7 @@ body {
 }
 
 button {
-  font-family: "Bakbak One", cursive;
+  font-family: 'Bakbak One', cursive;
   font-size: 0.6em;
   color: rgb(59, 47, 167);
   padding: 0.3em;
@@ -48,3 +48,31 @@ button:hover {
   display: none;
   transform: scale(0.6);
 }
+
+/* #alert {
+  position: absolute;
+  top: 25%;
+  left: 15vw;
+  margin: 35px;
+  width: 60vw;
+  height: 200px;
+  background-color: cadetblue;
+  text-align: center;
+}
+
+#alert-text,
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  color: rgb(236, 226, 213);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+reset {
+  width: 50%;
+  height: 40%;
+  font-size: 1.5rem;
+  border: solid rgb(236, 226, 213);
+  background-color: transparent;
+} */
